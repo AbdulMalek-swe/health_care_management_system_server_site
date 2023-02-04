@@ -4,7 +4,7 @@ const ambulance = require("../controller/ambulance.controller");
 const router = express.Router();
 //  brand get and update data 
 router
-  .route("/medicine")
+  .route("/ambulance")
 //   .get(medicine.getMedicine)
   .post( ambulance.postAmbulance)
 // router

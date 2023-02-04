@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const oponion = mongoose.Schema({
     name:{
         type:String,
-        require:[true,"please give your name"],
+        // require:[true,"please give your name"],
     },
     email:{
         type:String,
-        require:[true,"please give your email"],
+        // require:[true,"please give your email"],
     },
     comment: {
         type: String,

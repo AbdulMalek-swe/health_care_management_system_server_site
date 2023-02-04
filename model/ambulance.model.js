@@ -7,6 +7,11 @@ const AmbulanceSchema = mongoose.Schema({
         trim:true,
         lowercase:true
      },
+     ambulanceNumber:{
+      type:String,
+      required:[true,"please provide a name"],
+      lowercase:true
+     },
      img:{
         type:String,
         required:[true,"please provide img url"],
@@ -14,23 +19,19 @@ const AmbulanceSchema = mongoose.Schema({
      },
      description:{
         type:String,
-        required:[true,"please provide qualification"],
         trim:true
      },
      category:{
         type:String,
         required:[true,"please provide special activity"],
+        enum:["ac","non-ac"],
         trim:true
      },
-     chamber:{
-        type:String,
-        required:[true,"please provide chamber"],
-        trim:true
-     },
+     
      contact:{
         type:Number,
-        required:[true,"please provide bmdc no"],
-        trim:true
+        required:[true,"please provide driver phone no"],
+        validate:[validator.isMobilePhone,"please give a valid mobile phone"],    
      },
      location:{
         type:String,

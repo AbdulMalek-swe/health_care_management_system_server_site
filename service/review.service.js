@@ -5,11 +5,11 @@ module.exports.getReviewService = async () => {
     return result;
 }
 module.exports.postReviewService = async (data) => {
-    const email = await Review.findOne({ email: data.email });
-    let result;
-    if (!email) {
+    // const email = await Review.findOne({ email: data.email });
+    // let result;
+    // if (!email) {
         result = await Review(data).save();
-    }
+    // }
     return result;
 }
 module.exports.updateReviewService = async (data, id) => {

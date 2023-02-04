@@ -62,15 +62,15 @@ module.exports.postSignIn = async(req,res,next)=>{
 }
 module.exports.getMe = async(req,res,next)=>{
     try{
-    
-        const result = await findUserByEmail(req.params.email);
-        const {password:pwd,...others} = result.toObject();
+        const email = req.params.id
+        const result = await findUserByEmail(email);
+         
         res.status(200).json({
-            user:others
+            user:result
          })
     }
     catch(error){
-
+          console.log(error.message);
     }
 }
 module.exports.getToken = async(req,res,next)=>{

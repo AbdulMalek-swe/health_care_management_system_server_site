@@ -6,9 +6,9 @@ const router = express.Router();
 router
   .route("/review")
   .get(reviewController.getReview)
-  .post(verifyToken, reviewController.postReview)
+  .post( reviewController.postReview)
 router
   .route("/review/:id")
-  .patch(verifyToken,reviewController.updateReview)
-  .delete(verifyToken, reviewController.deleteReview)
+  .patch( reviewController.updateReview)
+  .delete(  reviewController.deleteReview)
 module.exports = router;

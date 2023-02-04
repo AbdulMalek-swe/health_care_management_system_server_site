@@ -8,6 +8,7 @@ app.use(express.urlencoded({extended:true}))
 const review = require("./routes/review.route")
 const user = require("./routes/user.route")
 const doctor = require("./routes/doctor.route");
+const doctorCategory = require("./routes/doctorCategory.route");
 const appointment = require("./routes/appointment.route");
 const medicine = require("./routes/medicine.route");
 const medicineBrand = require("./routes/medicineBrand.route");
@@ -17,8 +18,9 @@ const payment = require("./routes/payment.route");
 const { verifyToken } = require("./middleware/verifyToken");
 const { verifyAdmin } = require("./middleware/verifyAdmin");
 
-app.use('/',review)
+app.use('/api/v1/',review)
 app.use('/api/v1',user)
+app.use('/api/v1',doctorCategory)
 app.use('/api/v1',doctor)
 app.use('/api/v1',appointment)
 app.use('/api/v1',medicine)

@@ -21,14 +21,14 @@ module.exports.getReview = async (req, res, next) => {
 // post review controller 
 module.exports.postReview = async (req, res, next) => {
    try {
-    
+      
       if(!req.body.rating||!req.body.comment){
          return  res.status(200).json({
             error: "there is an error",
             
          })
       }
-      const data = {...req.body,...req.user};
+      const data = {...req.body };
      
       const result = await postReviewService(data);
       if(!result){
@@ -42,6 +42,7 @@ module.exports.postReview = async (req, res, next) => {
          data: result
       })
    } catch (error) {
+      console.log(error.message);
       res.status(200).json({
          message: error.message,
 
