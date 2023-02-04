@@ -5,7 +5,7 @@ const router = express.Router();
 //  brand get and update data 
 router
   .route("/ambulance")
-//   .get(medicine.getMedicine)
+  .get(ambulance.getAmbulance)
   .post( ambulance.postAmbulance)
 // router
 //   .route("/medicine/:id")

@@ -29,7 +29,7 @@ const AmbulanceSchema = mongoose.Schema({
      },
      
      contact:{
-        type:Number,
+        type:String,
         required:[true,"please provide driver phone no"],
         validate:[validator.isMobilePhone,"please give a valid mobile phone"],    
      },
