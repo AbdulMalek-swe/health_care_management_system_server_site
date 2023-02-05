@@ -49,6 +49,11 @@ const doctorSchema = mongoose.Schema({
       min:1,
       max:[5,"more than 5 not accepted"],
       default:5
+     },
+     viewCount:{
+      type:Number,
+      min:0,
+      default:0
      }
 },
 {
