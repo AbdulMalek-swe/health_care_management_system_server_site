@@ -35,3 +35,20 @@ module.exports.postAmbulance = async (req, res, next) => {
         })
     }
 }
+module.exports.deleteAmbulance = async (req, res, next) => {
+    try {
+        const data = req.body;
+        console.log(data);
+        const result = await deleteAmbulanceService(data);
+        res.status(200).json({
+            message: "success",
+            result: result
+        })
+    }
+    catch (error) {
+        console.log(error.message);
+        res.status(500).json({
+            error: error
+        })
+    }
+}
