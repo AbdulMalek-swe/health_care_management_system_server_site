@@ -13,7 +13,7 @@ module.exports.getMedicineBrand = async (req, res, next) => {
     }
     catch (error) {
         res.status(500).json({
-            error: error
+            error: error.message
         })
     }
 }
@@ -28,7 +28,7 @@ module.exports.postMedicineBrand = async (req, res, next) => {
     }
     catch (error) {;
         res.status(500).json({
-            error: error
+            error: error.message
         }) 
     }
 }
@@ -44,7 +44,7 @@ module.exports.getMedicineBrandById = async (req, res, next) => {
     }
     catch (error) {
         res.status(500).json({
-            error: error
+            error: error.message
         })
     }
 }
@@ -77,3 +77,4 @@ module.exports.deleteMedicineBrand = async (req, res, next) => {
         })
     }
 }
+// it s rules 

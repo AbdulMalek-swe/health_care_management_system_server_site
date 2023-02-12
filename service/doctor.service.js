@@ -1,6 +1,6 @@
 const Doctor = require("../model/doctor.model")
 module.exports.getDoctorService = async()=>{
-  const result =await Doctor.find({});
+  const result =await Doctor.find({}).sort({viewCount:-1});
   return result;
 }
 module.exports.postDoctorService = async(data)=>{

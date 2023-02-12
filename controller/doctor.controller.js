@@ -19,17 +19,16 @@ module.exports.getDoctor = async (req, res, next) => {
     }
 }
 module.exports.postDoctor = async (req, res, next) => {
-    try { 
-            console.log(req.body);
+    try {  
         const result = await postDoctorService(req.body);
         res.status(200).json({
             result: result
         })
     }
     catch (error) {
-         console.log(error.message);
+      
         res.status(400).json({
-            result: error.message
+            error: error.message
         })
     }
 }

@@ -37,6 +37,11 @@ const AmbulanceSchema = mongoose.Schema({
         type:String,
         required:[true,"please provide fee"],
         trim:true
+     },
+     serviceCharge:{
+      type:Number,
+      required:true,
+      min:400
      }
 },
 {

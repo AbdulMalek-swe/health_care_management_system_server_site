@@ -14,7 +14,7 @@ const {
     catch (error) {
         console.log(error.message);
         res.status(500).json({
-            error: error
+            error: error.message
         })
     }
 }
@@ -31,7 +31,7 @@ module.exports.postAmbulance = async (req, res, next) => {
     catch (error) {
         console.log(error.message);
         res.status(500).json({
-            error: error
+            error: error.message
         })
     }
 }
@@ -48,7 +48,7 @@ module.exports.deleteAmbulance = async (req, res, next) => {
     catch (error) {
         console.log(error.message);
         res.status(500).json({
-            error: error
+            error: error.message
         })
     }
 }

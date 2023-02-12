@@ -23,16 +23,11 @@ const medicineBrandSchema = mongoose.Schema({
         required:[true,"please provide img url"],
         validate: [validator.isURL, "Please provide a valid url"],
      },
-    location: {
-        type: String,
-        required: [true, "please provide location name"],
-        trim: true
-    },
-    status: {
-    type:String,
-    enum:["active","inactive"],
-    default:"active"
-    }
+     brandTitle:{
+        type:String,
+        required:[true,"please provide a brand sub titile"],
+        lowarecase:true
+     }
 },
     {
         timestamps: true

@@ -17,6 +17,10 @@ const DoctorCategorySchema = mongoose.Schema({
         required:[true,"please provide special activity"],
         trim:true
      },
+     subtitle:{
+      type:String,
+      required:[true,"provide a subtitle"]
+     }
      
 },
 {

@@ -18,16 +18,16 @@ module.exports.getDoctorCategory = async (req, res, next) => {
 }
 module.exports.postDoctorCategory = async (req, res, next) => {
     try { 
-            console.log(req.body);
+          
         const result = await postDoctorCategoryService(req.body);
         res.status(200).json({
             result: result
         })
     }
     catch (error) {
-         console.log(error.message);
+        
         res.status(400).json({
-            result: error.message
+            error: error.message
         })
     }
 }
