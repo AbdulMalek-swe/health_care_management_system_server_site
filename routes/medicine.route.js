@@ -8,10 +8,10 @@ const router = express.Router();
 router
   .route("/medicine")
   .get(medicine.getMedicine)
-  .post(verifyToken,verifyAdmin, medicine.postMedicine)
+  .post(  medicine.postMedicine)
 router
   .route("/medicine/:id")
-  .get( verifyToken, medicine.getMedicineById)
+  .get(   medicine.getMedicineById)
   router
   .route("/medicine/:id")
   .delete( medicine.deleteMedicineById)
