@@ -36,6 +36,9 @@ const userSchema = mongoose.Schema({
     type:String,
     enum:["male","female","other"],
     default:"male"
+   },
+   pic:{
+    type:String
    }
 },
 {
