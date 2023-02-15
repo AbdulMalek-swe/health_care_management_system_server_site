@@ -13,7 +13,7 @@ router
   .post(userController.postSignIn)
 router
   .route("/file/upload")
-  .post( upload("file"), userController.postFileUpload)
+  .post( upload.single("file"), userController.postFileUpload)
 router
   .route("/getme/:id")
   .get(userController.getMe)
