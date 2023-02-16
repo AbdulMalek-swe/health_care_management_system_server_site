@@ -52,6 +52,11 @@ const appointmentSchema = mongoose.Schema({
    date: {
       type: Date,
       require: [true, "pleasae sent date"]
+   },
+   paymentStatus:{
+      type:String,
+      enum:["paid","unpaid"],
+      default:"unpaid"
    }
 
 },

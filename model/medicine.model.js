@@ -27,7 +27,7 @@ const medicineSchema = mongoose.Schema({
         trim:true
      },
     price: {
-        type: Number,
+        type: Number, 
         required: true
     },
     brand: {

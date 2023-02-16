@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const {ObjectId} = mongoose.Schema.Types
 const paymentSchema = mongoose.Schema({
     total_amount:Number,
     currency: String,
@@ -33,7 +34,9 @@ const paymentSchema = mongoose.Schema({
     value_b: String,
     value_c: String,
     value_d: String,
-    val_id:String
+    val_id:String,
+    payment:String,
+    product_id:ObjectId
 },
     {
         timestamps: true

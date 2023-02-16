@@ -5,7 +5,7 @@ const router = express.Router();
 //  brand get and update data 
 router
   .route("/init")
-  .post(paymentController.getPayment)
+  .post(paymentController.postPayment)
    
   router
   .route("/success")
@@ -16,4 +16,11 @@ router
   router
   .route("/cancel")
   .post(paymentController.cancelPayment)
+  router
+  .route("/order")
+   .post(paymentController.postOrderPayment)
+  router
+  .route("/order/:id")
+  .get(paymentController.getOrderPayment)
+  
 module.exports = router;
