@@ -1,6 +1,7 @@
 const SSLCommerzPayment = require('sslcommerz-lts')
 const { v4: uuidv4 } = require('uuid');
 const Appointment = require('../model/appointment.model');
+const MediPayment = require('../model/medicinePayment.model');
 const Payment = require('../model/payment.model');
 
 module.exports.postPayment = async (req, res, next) => {
@@ -111,7 +112,7 @@ module.exports.postOrderPayment = async (req, res, next) => {
         const {tran_id,val_id }= req.body;
         const status = await Payment.findOne({ tran_id: tran_id });
           await Payment.updateOne({ tran_id: tran_id }, { $set: { tran_id: status.val_id,payment:"successfull" } })
-         
+          await MediPayment.updateOne({ tran_id: tran_id }, { $set: { tran_id: status.val_id,payment:"successfull" } })
           await Appointment.updateOne({ _id: status?.product_id }, { $set: { paymentStatus:"paid" } })
          
         res.status(200).json({

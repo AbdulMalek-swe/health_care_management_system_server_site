@@ -8,15 +8,19 @@ const router = express.Router();
 router
   .route("/medicine")
   .get(medicine.getMedicine)
-  .post(  medicine.postMedicine)
-  router
+  .post(medicine.postMedicine)
+router
   .route("/medicine/init")
-  .post(  medicine.medicinePayment)
+  .get(medicine.getPaymentMedicine)
+  .post(medicine.medicinePayment)
+  router
+  .route("/medicine/init/:id")
+  .patch(medicine.updatePaymentMedicine)
 router
   .route("/medicine/:id")
-  .get(   medicine.getMedicineById)
-  router
+  .get(medicine.getMedicineById)
+router
   .route("/medicine/:id")
-  .delete( medicine.deleteMedicineById)
+  .delete(medicine.deleteMedicineById)
 
 module.exports = router;

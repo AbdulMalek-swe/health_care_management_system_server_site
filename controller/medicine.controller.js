@@ -117,11 +117,8 @@ module.exports.medicinePayment = async (req, res, next) => {
             ship_country: 'Bangladesh',
         };
         const result = await MediPayment(data).save();
-       
         const sslcz = new SSLCommerzPayment(process.env.STORE_ID, process.env.STORE_PASSWORD, false)
-      
         sslcz.init(data).then(data => {
-             
             res.status(200).json({
                 result: data.GatewayPageURL
             })
@@ -135,3 +132,32 @@ module.exports.medicinePayment = async (req, res, next) => {
         })
     }
 }
+module.exports.getPaymentMedicine = async (req ,res) =>{
+    try{
+     const result =  await MediPayment.find({})
+     res.status(200).json({
+        result: result
+    })
+    }
+     catch (error) {
+         console.log(error.message);
+         res.status(200).json({
+             error: error.message
+         })
+     }
+    }
+ 
+module.exports.updatePaymentMedicine = async (req,res) =>{
+   try{
+    const {id} = req.params;
+    console.log(id);
+    const result =  await MediPayment.updateOne({_id:id},{$set:{status:"deliver"}},{runValidators:true})
+    return result;
+   }
+    catch (error) {
+        console.log(error.message);
+        res.status(200).json({
+            error: error.message
+        })
+    }
+   }
