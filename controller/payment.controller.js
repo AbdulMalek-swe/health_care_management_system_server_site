@@ -2,6 +2,7 @@ const SSLCommerzPayment = require('sslcommerz-lts')
 const { v4: uuidv4 } = require('uuid');
 const Appointment = require('../model/appointment.model');
 const Payment = require('../model/payment.model');
+
 module.exports.postPayment = async (req, res, next) => {
     try {
      

@@ -9,6 +9,9 @@ router
   .route("/medicine")
   .get(medicine.getMedicine)
   .post(  medicine.postMedicine)
+  router
+  .route("/medicine/init")
+  .post(  medicine.medicinePayment)
 router
   .route("/medicine/:id")
   .get(   medicine.getMedicineById)
