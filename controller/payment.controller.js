@@ -4,7 +4,7 @@ const Appointment = require('../model/appointment.model');
 const Payment = require('../model/payment.model');
 module.exports.postPayment = async (req, res, next) => {
     try {
-       console.log(req.body);
+     
         const data = {
             total_amount: 100,
             currency: 'BDT',

@@ -7,9 +7,9 @@ module.exports.getAppointmentService = async (email) => {
   return result;
 }
 module.exports.postAppointmentService = async (data) => {
-  // console.log(data,"sdf")
+ 
   const trys = await Doctor.updateOne({_id:data.doctorId},{$inc:{ 'viewCount': 1 } },{ runValidators: true })
-  console.log(trys,"sdfsad");
+   
   const result = await Appointment.create(data);
   
   return result;

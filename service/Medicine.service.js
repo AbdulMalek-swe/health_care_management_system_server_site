@@ -12,7 +12,7 @@ module.exports.postMedicineService = async (data) => {
     const user = await MedicineBrand.findOne({ _id: data?.brand?.id });
 
     const result = await Medicine(data).save();
-    // console.log(user?.name,data?.brand?.name);
+   
     if (result?._id) {
         user.medicine.push(result._id);
         await MedicineBrand.updateOne({ _id: data.brand.id }, { medicine: user.medicine }, {})

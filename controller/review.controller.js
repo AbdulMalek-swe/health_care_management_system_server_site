@@ -42,7 +42,7 @@ module.exports.postReview = async (req, res, next) => {
          data: result
       })
    } catch (error) {
-      console.log(error.message);
+    
       res.status(200).json({
          message: error.message,
 

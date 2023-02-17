@@ -12,5 +12,6 @@ router
 router
   .route("/doctor/:id")
   .get(doctorController.getDoctorById)
+  .patch(doctorController.updateDoctorById)
   .delete(doctorController.cancelDoctorById)
 module.exports = router;

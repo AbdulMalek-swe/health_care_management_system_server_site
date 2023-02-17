@@ -7,6 +7,5 @@ module.exports.postBloodService=async(data)=>{
     return await Blood.create(data)
 }
 module.exports.updateBloodService =async (id,value)=>{
-    console.log(id,value);
     return await Blood.updateOne({ _id: id }, { $set: { status: value } }, { runValidators: true })
 }

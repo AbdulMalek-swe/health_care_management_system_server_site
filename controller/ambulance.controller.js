@@ -12,7 +12,7 @@ const {
         })
     }
     catch (error) {
-        console.log(error.message);
+      
         res.status(500).json({
             error: error.message
         })
@@ -21,7 +21,7 @@ const {
 module.exports.postAmbulance = async (req, res, next) => {
     try {
         const data = req.body;
-        console.log(data);
+        
         const result = await postAmbulanceService(data);
         res.status(200).json({
             message: "success",
@@ -29,7 +29,7 @@ module.exports.postAmbulance = async (req, res, next) => {
         })
     }
     catch (error) {
-        console.log(error.message);
+       
         res.status(500).json({
             error: error.message
         })
@@ -38,7 +38,7 @@ module.exports.postAmbulance = async (req, res, next) => {
 module.exports.deleteAmbulance = async (req, res, next) => {
     try {
         const data = req.body;
-        console.log(data);
+        
         const result = await deleteAmbulanceService(data);
         res.status(200).json({
             message: "success",
@@ -46,7 +46,7 @@ module.exports.deleteAmbulance = async (req, res, next) => {
         })
     }
     catch (error) {
-        console.log(error.message);
+       
         res.status(500).json({
             error: error.message
         })

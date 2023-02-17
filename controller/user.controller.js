@@ -7,9 +7,9 @@ const {
 const { generateToken } = require("../utils/token");
 module.exports.postSignUp = async (req, res, next) => {
     try {
-        // console.log(req.body);
+       
         const user = await postSignUpService(req.body);
-        // console.log(user);
+       
         await user.save({validateBeforeSave:false})
         // const token = generateToken(req.body.email)
         res.status(200).json({
@@ -20,7 +20,7 @@ module.exports.postSignUp = async (req, res, next) => {
           });  
     } 
     catch (error) { 
-          console.log(error.message);
+         
              res.status(501).json({
                 message:"unAuthorized",
                 error:error.message
@@ -29,7 +29,7 @@ module.exports.postSignUp = async (req, res, next) => {
 }
 module.exports.postSignIn = async(req,res,next)=>{
     try{
-        console.log(req.body);
+        
         if(!req.body.password|!req.body.email){
             return  res.status(501).json({
                 error:"email or password is missing"
@@ -71,14 +71,14 @@ module.exports.getMe = async(req,res,next)=>{
          })
     }
     catch(error){
-          console.log(error.message);
+           
     }
 }
 module.exports.getToken = async(req,res,next)=>{
     try{
         const result = await findUserByEmail(req.query.email);
         const token = generateToken(result);
-        console.log(token);
+       
         res.status(200).json({
             token
          })
@@ -92,6 +92,7 @@ module.exports.postFileUpload = async(req,res) =>{
     const file = req.file;
     const email = req.body;
     const result = await userImageUploadService(email,file)
+    console.log(result);
     res.status(200).json({
         result:"got success",
         result:result

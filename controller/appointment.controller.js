@@ -19,7 +19,7 @@ module.exports.getAppointment = async (req, res, next) => {
 }
 module.exports.postAppointment = async (req, res, next) => {
     try {
-        // console.log(req.body)
+   
         const date = new Date(req.body.date);
          const dates = new Date()
          const data =req.body;      
@@ -29,7 +29,7 @@ module.exports.postAppointment = async (req, res, next) => {
             })
         }
         const result = await postAppointmentService(data);
-          console.log(result)
+          
             if(result.date!==date){
             
             }
@@ -39,7 +39,7 @@ module.exports.postAppointment = async (req, res, next) => {
         })
     }
     catch (error) {
-         console.log(error.message)
+        
         res.status(400).json({
             error:error.message
         })
@@ -54,7 +54,7 @@ module.exports.ratingUpdateAppointment = async (req, res, next) => {
         }) 
     }
     catch (error) {
-        console.log(error.message)
+ 
         res.status(400).json({
             result: error.message
         })
@@ -62,7 +62,7 @@ module.exports.ratingUpdateAppointment = async (req, res, next) => {
 }
 module.exports.deleteAppointment = async (req, res, next) => {
     try {
-        console.log(req.params.id)
+       
         const result = await deleteAppointmentService(req.params.id);
         res.status(200).json({
             result: result

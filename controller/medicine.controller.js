@@ -7,9 +7,9 @@ const {
 
 module.exports.getMedicine = async (req, res, next) => {
     try {
-        // console.log(req.query);
+       
        let category =req.query; 
-    //    console.log(category);
+ 
         if(!category.category){
             category ={}
         }

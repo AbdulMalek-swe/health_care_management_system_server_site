@@ -33,6 +33,12 @@ const BloodSchema = mongoose.Schema({
         type:String,
         enum:["active","inactive"],
         default:"active"
+     },
+     phone:{
+      type:String
+     },
+     file:{
+      type:String
      }
       
      
