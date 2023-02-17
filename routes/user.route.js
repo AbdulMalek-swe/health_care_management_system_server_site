@@ -20,4 +20,7 @@ router
 router
   .route("/user/jwt")
   .get(userController.getToken)
+  router
+  .route("/user/:id")
+  .patch(userController.userMakeAdmin)
 module.exports = router;

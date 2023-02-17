@@ -2,7 +2,8 @@ const {
     postSignUpService,
     postSignInService,
     findUserByEmail,
-    userImageUploadService
+    userImageUploadService,
+    userMakeAdminService
      } = require("../service/user.service");
 const { generateToken } = require("../utils/token");
 module.exports.postSignUp = async (req, res, next) => {
@@ -104,3 +105,20 @@ module.exports.postFileUpload = async(req,res) =>{
      })
   }
 }
+module.exports.userMakeAdmin = async(req,res) =>{
+  try{
+      const {id} = req.params;
+       
+      const result = await userMakeAdminService(id )
+      console.log(result);
+      res.status(200).json({
+          result:"got success",
+          result:result
+       })
+    }
+    catch(error){
+      res.status(500).json({
+          error:error.message
+       })
+    }
+  }
